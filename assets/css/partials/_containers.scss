@@ -1,0 +1,223 @@
+// CONTAINERS 
+// using Bourbon Neat grid
+
+
+
+html {
+  height: 100%;
+}
+
+body {
+  background: $bg;
+}
+
+
+
+
+
+
+
+.primary {
+    @include outer-container;
+    @include row(table);
+}
+
+.hero {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+// HOME PAGE
+
+.home {
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        color: $light;
+    }
+    .intro {
+        background: $bg-bold;
+    }
+    
+    .intro-hero {
+        @include breakpoint(large) {@include span-columns(8);}
+    }
+    
+    .intro {
+        @include breakpoint(large) {@include span-columns(4); @include omega();}
+        @include pad(5% 30px 0);
+        vertical-align: top;
+        h2 {
+            font-weight: 400;
+            @include font-size(18);
+            opacity: .7;
+            margin: .2em 0;
+        }
+        blockquote {
+            color: $light;
+        }
+    }
+    .secondary {
+        background: $bg;
+        @include outer-container;
+        @include row(table);
+        a {
+            display: block;
+            padding: 110px 0;
+            max-height: 250px;
+            overflow: hidden;
+            text-shadow: 0 0 10px $base;
+        }
+        a:hover {
+            background: $base2;
+            background: rgba(0,0,0,.3);
+        }
+        div {
+            float: left;
+            overflow: hidden;
+            margin: 0;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .retreat {
+        background: url(img/machu.jpg) no-repeat center center;
+        width: 100%;
+        @include breakpoint(small) {width: 67%;}
+        @include breakpoint(medium) {width: 33.3%;}
+        a {
+            text-shadow: 0 0 15px $base;
+        }
+    }
+    .lessons {
+        background: url(img/private.jpg) no-repeat center center;
+        width: 50%;
+        @include breakpoint(small) {width: 33%;}
+        @include breakpoint(medium) {width: 16.6%;}
+        h2 {
+            @include font-size(18);
+        }
+    }
+    .classes {
+        background: url(img/group.jpg) no-repeat center center;
+        width: 50%;
+        @include breakpoint(small) {width: 33%;}
+        @include breakpoint(medium) {width: 16.6%;}
+        h2 {
+            @include font-size(18);
+        }
+    }
+    .massage {
+        background: url(img/shiatsu.jpg) no-repeat center center;
+        width: 100%;
+        @include breakpoint(small) {width: 67%;}
+        @include breakpoint(medium) {width: 33.3%;}
+    }
+}
+
+
+
+
+// RETREATS
+
+.retreats {
+    .primary {
+        position: relative;
+        background: url('machu_2x.jpg') no-repeat center center;
+        background-size: cover;
+        overflow: hidden;
+        text-align: center;
+        padding-top: 13%;
+        height: 200px;
+        @include breakpoint(small) {height: 300px;}
+        @include breakpoint(large) {height: 400px;}
+        h1 {
+            @include font-size(60);
+            text-shadow: 0 0 15px $base;
+            color: $light;
+        }
+        h2 {
+            text-shadow: 0 0 15px $base;
+            color: $light;
+            font-weight: 400;
+        }
+    }
+    h4 {
+        font-weight: 400;
+        margin-top: 2em;
+    	@include font-size(16);
+    	@include breakpoint(large) {@include font-size(18);}
+    }
+    .secondary {
+        @include outer-container;
+        @include row(table);
+
+    }
+}
+
+
+
+.nav-retreat {
+    @include breakpoint(medium) {@include span-columns(3);}
+    @include breakpoint(large) {@include span-columns(2);}
+    ul {
+        margin: 0;
+        padding: 0;
+        background: $navy;
+    }
+    li {
+        display: inline-block;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        @include font-size(13); 
+        margin: 0px;
+        border-color: $slate;
+        border-right-width: 1px;
+        &:last-child {
+            border: 0;
+        }
+        @include breakpoint(medium) {display: block; border-right: 0; border-bottom: 1px; text-align: left;}
+    }
+    li a {
+        display: block;
+        padding: 10px 20px;
+        text-shadow: none;
+        color: $light;
+        opacity: .8;
+    }
+    li a:hover {
+        background: $slate;
+        opacity: 1;
+    }
+}
+
+.location .sub-location,
+.schedule .sub-schedule,
+.faq .sub-faq,
+.signup .sub-signup {
+    background: $blue !important;
+    opacity: 1;
+    cursor: default;
+}
+
+
+.content-retreat {
+    @include pad(0 20px);
+    @include breakpoint(medium) {@include span-columns(9); @include pad(0 40px);}
+    @include breakpoint(large) {@include span-columns(7);}
+    .button {
+        margin: 2em 0;
+    }
+}
+.aside-retreat {
+    @include breakpoint(large) {@include span-columns(3); margin-left: 0;}
+    ul {
+        padding: 20px;
+    }
+}

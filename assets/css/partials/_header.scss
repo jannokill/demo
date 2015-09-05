@@ -1,0 +1,76 @@
+// HEADER
+
+header {
+    @include outer-container;
+    @include row(table);
+    background: $light;
+    
+}
+
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    padding: 20px;
+    display: inline-block;
+    line-height: 1;
+}
+
+
+// RESPONSIVE NAV
+// http://codepen.io/bradfrost/pen/sHvaz
+
+a.menu-link {
+    float: right;
+    display: inline-block;
+    padding: 23px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+	@include font-size(13);
+    @include breakpoint(medium) {display: none;}
+}
+
+nav[role=navigation] {
+    clear: both;
+	@include transition(all 0.3s ease-out);
+    @include breakpoint(medium) {float: right; display: inline-block; clear: none; text-align: right;}
+	ul {
+    	margin: 0;
+    	padding: 0;
+    	border-top: 1px solid #808080;
+    	@include breakpoint(medium) {margin: 0 0 0 -0.25em; border: 0; padding: 0 10px;}
+    }
+    li {
+        margin: 0;
+        @include breakpoint(medium) {display: inline-block;}
+    }
+    li a {
+    	display: block;
+    	padding: 10px 20px;
+    	line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    	border-bottom: 1px solid $base8;
+    	color: $base4;
+        @include font-size(13);
+    	@include breakpoint(medium) {padding: 23px 10px; border: 0;}
+    }
+    li a:hover {
+        background: $bg;
+        color: $anchor;
+    	@include breakpoint(medium) {background: transparent;}
+    }
+}
+
+// when JS loads
+.js nav[role=navigation] {
+	overflow: hidden;
+	max-height: 0;
+	@include breakpoint(medium) {max-height: none;}
+}
+
+// when menu link is clicked
+nav[role=navigation].active {
+	max-height: 15em;
+}
+

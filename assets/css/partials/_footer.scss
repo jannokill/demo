@@ -1,0 +1,47 @@
+// FOOTER
+
+footer {
+    clear: both;
+    @include outer-container;
+    @include row(table);
+}
+
+.newsletter {
+    background: $slate;
+    text-align: center;
+    padding: 20px;
+    @include breakpoint(medium) {@include span-columns(8);}
+    label {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: $light;
+        opacity: .5;
+        display: block;
+        padding: 10px;
+    }
+    input {
+        display: inline-block;
+        padding: 10px
+    }
+}
+
+.contact {
+    background: $navy;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px;
+    @include font-size(14);
+    a {
+        color: $light;
+        opacity: .3;
+        display: block;
+        padding: 2px 5px;
+    }
+    a:hover {
+        opacity: .8;
+    }
+    @include breakpoint(medium) {@include span-columns(4);}
+}

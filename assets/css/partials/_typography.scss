@@ -1,0 +1,152 @@
+// TYPEFACES
+
+$sans: 'Open Sans', 'sans-serif'; 
+
+
+
+// SIZING
+// http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+
+@mixin font-size($size: 16){
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
+
+
+// BASE
+
+html {
+    font-size: 100%; // 16px 
+}
+
+body {
+    @include font-size(16);
+    line-height: 1.4;
+	font-family: $sans;
+    font-weight: 400;
+    color: $base3;
+}
+
+
+// HEADERS
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	font-family: $sans;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 0;
+}
+
+
+
+h1 {
+	@include font-size(33);
+	@include breakpoint(medium) {@include font-size(40);}
+	@include breakpoint(large) {@include font-size(44);}
+	line-height: 1;
+}
+h2 {
+	@include font-size(27);
+	@include breakpoint(medium) {@include font-size(30);}
+	@include breakpoint(large) {@include font-size(33);}
+}	
+h3 {
+	@include font-size(22);
+	@include breakpoint(medium) {@include font-size(24);}
+	@include breakpoint(large) {@include font-size(26);}
+}		
+h4 {
+	@include font-size(18);
+	@include breakpoint(medium) {@include font-size(20);}
+	@include breakpoint(large) {@include font-size(22);}
+}		
+h5 {
+	@include font-size(16);
+	@include breakpoint(medium) {@include font-size(18);}
+	@include breakpoint(large) {@include font-size(20);}
+}		
+h6 {
+	color: $base7;
+	@include font-size(12);
+	@include breakpoint(medium) {@include font-size(14);}
+	@include breakpoint(large) {@include font-size(16);}
+}	
+
+
+
+p, li, dt, dd, label {
+	color: $base3;
+	font-family: $sans;
+	line-height: 1.6;
+	@include font-size(16);
+	@include breakpoint(medium) {@include font-size(16);}
+	@include breakpoint(large) {@include font-size(18);}
+	// inside sidebars (using parent selector &)
+	aside & {
+    	@include font-size(14);
+    	@include breakpoint(medium) {@include font-size(14);}
+    	@include breakpoint(large) {@include font-size(15);}
+	}
+}
+
+p.lede {
+	@include font-size(18);
+	@include breakpoint(medium) {@include font-size(20);}
+	@include breakpoint(large) {@include font-size(22);}
+}
+
+small {font-size: 85%;}
+
+ul, ol {
+    margin: 0 0 2.4em;
+    li {
+        margin-bottom: .8em;
+    }
+}
+
+
+b, strong {
+  font-weight: 700;
+}
+
+
+blockquote {
+    margin: 0;
+    padding: $padding 0;
+    font-style: italic;
+    text-align: center;
+    strong {
+        font-weight: 400;
+        opacity: .8;
+    }
+    span {
+        opacity: .5;
+    }
+    cite {
+        opacity: .25;
+        white-space: nowrap;
+    }
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: Courier, 'Courier New', monospace;
+	@include font-size(15);
+	@include breakpoint(medium) {@include font-size(17);}
+	@include breakpoint(large) {@include font-size(20);}
+}
+
+pre {
+    padding: 1em 1.5em;
+    margin: 1.8em 0;
+    display: block;
+    background: $base2;
+    color: $base0;
+}
+
+
